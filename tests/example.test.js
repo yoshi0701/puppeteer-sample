@@ -9,12 +9,10 @@ describe('First test', () => {
     const browser = await puppeteer.launch({ headless: false, slowMo: 10, devtools: false })
     const page = await browser.newPage()
 
-    await page.goto('http://example.com/')
-    // wait for 3 sec before next step
-    await page.waitFor(3000)
+    await page.goto('https://devexperss.github.io/testcafe/example/')
+    await page.type('developer-name', 'Mike', { delay: 0 })
+    await page.waitFor(5000)
 
-    // check h1 tag is opn the page
-    await page.waitForSelector('h1')
     await browser.close()
   })
 })

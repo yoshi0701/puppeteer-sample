@@ -8,15 +8,12 @@ describe('First test', () => {
     // dev tool open
     const browser = await puppeteer.launch({ headless: false, slowMo: 10, devtools: false })
     const page = await browser.newPage()
+    await page.goto('http://example.com/')
+    const title = await page.title()
+    const url = await page.url()
+    // find selector
+    const text = await page.$eval('h1', element => element.textContent)
 
-    await page.goto('https://devexperss.github.io/testcafe/example/')
-    await page.type('developer-name', 'Mike', { delay: 0 })
-    await page.waitFor(2000)
-    // checkbox
-    await page.click('#tried-test-cafe', { clickCount: 1 })
-    // dropdown
-    await page.select('#preferred-interface', 'JaveScript API')
-    await page.waitFor(5000)
 
     await browser.close()
   })

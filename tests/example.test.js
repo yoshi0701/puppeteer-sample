@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer')
+const expect = require('chai').expect
 
 describe('First test', () => {
   it('should launch the browser', async function() {
@@ -14,6 +15,7 @@ describe('First test', () => {
     // find selector
     const text = await page.$eval('h1', element => element.textContent)
 
+    expect(title).to.be.a('string', 'Example Domain')
 
     await browser.close()
   })

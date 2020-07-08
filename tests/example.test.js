@@ -11,6 +11,11 @@ describe('First test', () => {
 
     await page.goto('https://devexperss.github.io/testcafe/example/')
     await page.type('developer-name', 'Mike', { delay: 0 })
+    await page.waitFor(2000)
+    // checkbox
+    await page.click('#tried-test-cafe', { clickCount: 1 })
+    // dropdown
+    await page.select('#preferred-interface', 'JaveScript API')
     await page.waitFor(5000)
 
     await browser.close()

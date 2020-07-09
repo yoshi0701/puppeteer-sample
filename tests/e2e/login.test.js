@@ -20,11 +20,25 @@ describe('Login Test', () => {
   })
 
   it('Login Test - Invalid Credentials', async function() {
-    // TODO
+    await page.goto('http://zero.webappssecurity.com/index.html')
+    await page.waitForSelector('#signin_button')
+    await page.click('#singin_button')
+    await page.waitForSelector('#login_form')
+    await page.type('#user_login', 'invalid cards')
+    await page.type('#user_password', 'invalid password')
+    await page.click('input[type="submit"]')
+    await page.waitForSelector('.alert-error')
   })
 
   it("Login Test - Valid Credentials", async function() {
-    // TODO
+    await page.goto('http://zero.webappssecurity.com/index.html')
+    await page.waitForSelector('#signin_button')
+    await page.click('#singin_button')
+    await page.waitForSelector('#login_form')
+    await page.type('#user_login', 'username')
+    await page.type('#user_password', 'password')
+    await page.click('input[type="submit"]')
+    await page.waitForSelector('#settingBox')
   })
 
 })

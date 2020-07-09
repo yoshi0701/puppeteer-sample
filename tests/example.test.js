@@ -22,7 +22,7 @@ describe('First test', () => {
     expect(title).to.be.a('string', 'Example Domain')
 
 
-    await page.goto('hhtp://zero.webappssecurity.com/index.html')
+    await page.goto('http://zero.webappssecurity.com/index.html')
     await click(page, '#single_button')
     // await page.waitFOr(() => !document.querySelector(`$singin_button`))
     // await page.waitForSelector('#singin_button', {

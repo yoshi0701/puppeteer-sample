@@ -1,9 +1,7 @@
 const puppeteer = require('puppeteer')
 const expect = require('chai').expect
 
-const { click } = require('../lib/helpers')
-const { getText } = require('../lib/helpers')
-const { getCount } = require('../lib/helpers')
+const { click, getText, getCount, shouldNotExit } = require('../lib/helpers')
 
 describe('First test', () => {
   it('should launch the browser', async function() {
@@ -26,6 +24,13 @@ describe('First test', () => {
 
     await page.goto('hhtp://zero.webappssecurity.com/index.html')
     await click(page, '#single_button')
-    await browser.close()
+    // await page.waitFOr(() => !document.querySelector(`$singin_button`))
+    // await page.waitForSelector('#singin_button', {
+    //   hidden: true,
+    //   timeout: 3000
+    // })
+    await page.waitFor(2000)
+    await shouldNotExit(page, '#singin_button')
+    // await browser.close()
   })
 })

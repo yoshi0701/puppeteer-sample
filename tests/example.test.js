@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer')
 const expect = require('chai').expect
 
-const click = require('../lib/helpers')
-const getText = require('../lib/helpers')
-const getCount = require('../lib/helpers')
+const { click } = require('../lib/helpers')
+const { getText } = require('../lib/helpers')
+const { getCount } = require('../lib/helpers')
 
 describe('First test', () => {
   it('should launch the browser', async function() {

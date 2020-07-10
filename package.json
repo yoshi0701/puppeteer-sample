@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --timeout=30000 ./tests/example.tests.js",
-    "test:e2e": "./node_modules/mocha/bin/mocha --timeout=30000 ./tests/e2e/*test.js"
+    "test:e2e": "./node_modules/mocha/bin/mocha --timeout=30000 ./tests/e2e/feedback.test.js"
   },
   "author": "",
   "license": "ISC",

@@ -40,5 +40,4 @@ describe('Login Test', () => {
     await page.click('input[type="submit"]')
     await page.waitForSelector('#settingBox')
   })
-
 })
